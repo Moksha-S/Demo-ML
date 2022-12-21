@@ -12,12 +12,9 @@
     <div v-show="active">
       <label for="fname">edit:</label>
       <input v-model="text" :placeholder="`${$t('title')}`" />
-      <input
-        type="submit"
-        value="Submit"
-        @click="check({ title: `${text}` })"
-      />
+      <input type="submit" value="Submit" @click="check('title', `${text}`)" />
     </div>
+
     <div>
       <div class="field">
         <label for="fname">Car name:</label>
@@ -55,9 +52,8 @@ export default {
     axios
       .get(`http://localhost:3000/en`)
       .then((response) => {
-        // JSON responses are automatically parsed.
         this.localeMessage = response.data;
-        console.log(this.localeMessage, "879465");
+        // console.log(this.localeMessage, "879465");
       })
       .catch((e) => {
         this.errors.push(e);
@@ -73,7 +69,9 @@ export default {
       console.log("===============", this.$i18n.messages[this.$i18n.locale]);
     },
 
-    check(value) {
+    check(key, text) {
+      const value = {};
+      value[key] = text;
       this.active = !this.active;
       this.localeMessage = Object.assign(this.localeMessage, value);
       this.text = "";
