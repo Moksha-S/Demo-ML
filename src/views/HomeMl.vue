@@ -44,8 +44,8 @@ export default {
   data() {
     return {
       text: "",
-      carName:"",
-      carModel:"",
+      carName: "",
+      carModel: "",
       active: false,
       localeMessage: {},
     };
@@ -75,18 +75,14 @@ export default {
 
     check(value) {
       this.active = !this.active;
-      console.log("edited:  ", value);
-
       this.localeMessage = Object.assign(this.localeMessage, value);
-      console.log("after updated", this.localeMessage);
       this.text = "";
       axios
-        .post(`http://localhost:3000/en`, this.localeMessage)
+        .post(`http://localhost:3000/${this.$i18n.locale}`, this.localeMessage)
         .then((response) => {
-          console.log("check post data", response.data);
-          // this.$i18n.messages= response.data
-          // this.$i18n.setLocaleMessage(this.$i18n.locale, response.data)
-          // console.log(this.$i18n, "======");
+          const data = JSON.stringify(response.data);
+          this.$i18n.setLocaleMessage(this.$i18n.locale, response.data);
+          window.localStorage.setItem(this.$i18n.locale, data);
         })
         .catch((e) => {
           this.errors.push(e);
@@ -96,9 +92,8 @@ export default {
 };
 </script>
 
-
 <style scoped>
-.field{
-  margin:20px
+.field {
+  margin: 20px;
 }
 </style>

@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueI18n from "vue-i18n";
 import getBrowserLocale from "@/i18n/get-browser-locale";
 import { supportedLocalesInclude } from "./i18n/supported-locales";
+// import axios from "axios";
 
 Vue.use(VueI18n);
 
@@ -19,8 +20,32 @@ function loadLocaleMessages() {
       messages[locale] = locales(key);
     }
   });
-  return messages;
+
+  if (
+    JSON.parse(window.localStorage.getItem(getStartingLocale())) == undefined
+  ) {
+    return messages;
+  } else {
+    const temp = {};
+    var keys = Object.keys(localStorage);
+    keys.map((key) => {
+      temp[key] = JSON.parse(window.localStorage.getItem(key));
+    });
+    return temp;
+  }
 }
+
+// async function loadLocaleMessages() {
+//   const messages = {};
+//   await axios.get(`http://localhost:3000/en`).then((response) => {
+//     messages["en"] = response.data;
+//   });
+//   await axios.get(`http://localhost:3000/ar`).then((response) => {
+//     messages["ar"] = response.data;
+//   });
+//   console.log("check lan msgs", messages)
+//   return await messages;
+// }
 
 function getStartingLocale() {
   const browserLocale = getBrowserLocale({ countryCodeOnly: true });
