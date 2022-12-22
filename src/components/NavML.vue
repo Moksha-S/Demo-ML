@@ -49,7 +49,6 @@ export default {
   color: #fff;
   text-decoration: none;
 }
-
 .user-greeting {
   margin-right: 1rem;
 }
