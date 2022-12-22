@@ -63,7 +63,17 @@ export default {
       });
   },
   methods: {
-    saveEditedData(key, editedData) {
+    async saveEditedData(key, editedData) {
+      if (this.$i18n.locale == "en") {
+        await axios.get(`http://localhost:3000/en`).then((res) => {
+          this.localeMessage = res.data;
+        });
+      } else if (this.$i18n.locale == "ar") {
+        await axios.get(`http://localhost:3000/ar`).then((res) => {
+          this.localeMessage = res.data;
+        });
+      }
+
       this.dialog = false;
       const value = {};
       value[key] = editedData;

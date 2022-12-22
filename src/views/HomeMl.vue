@@ -25,17 +25,14 @@ export default {
     onHover,
   },
   data() {
-    return {
-      localeMessage: {},
-    };
+    return {};
   },
 
   created() {
     axios
-      .get(`http://localhost:3000/en`)
+      .get(`http://localhost:3000/${this.$i18n.locale}`)
       .then((response) => {
-        this.localeMessage = response.data;
-        // console.log(this.localeMessage, "879465");
+        console.log("current locale string", response.data);
       })
       .catch((e) => {
         this.errors.push(e);

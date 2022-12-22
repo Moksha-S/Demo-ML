@@ -29,30 +29,34 @@
     "message": "مرحبًا i18n !!",
     "user_greeting": "مرحبًا, {name}",
     "title": "مرحبًا بك في CarSaver!",
-    "nav": {
-      "home": "الرئيسية",
-      "about": "نبذة عنا"
-    },
-    "about": {
-      "title": "نبذة عنا",
-      "para1": "لكن لا بد أن أوضح لك أن كل هذه الأفكار المغلوطة حول استنكار  النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف حقيقة وأساس تلك السعادة البشرية، فلا أحد يرفض أو يكره أو يتجنب الشعور بالسعادة، ولكن بفضل هؤلاء الأشخاص الذين لا يدركون بأن السعادة لا بد أن نستشعرها بصورة أكثر عقلانية ومنطقية فيعرضهم هذا لمواجهة الظروف الأليمة، وأكرر بأنه لا يوجد من يرغب في الحب ونيل المنال ويتلذذ بالآلام، الألم هو الألم ولكن نتيجة لظروف ما قد تكمن السعاده فيما نتحمله من كد وأسي.",
-      "para2": "و سأعرض مثال حي لهذا، من منا لم يتحمل جهد بدني شاق إلا من أجل الحصول على ميزة أو فائدة؟ ولكن من لديه الحق أن ينتقد شخص ما أراد أن يشعر بالسعادة التي لا تشوبها عواقب أليمة أو آخر أراد أن يتجنب الألم الذي ربما تنجم عنه بعض المتعة ؟ ",
-      "para3": "علي الجانب الآخر نشجب ونستنكر هؤلاء الرجال المفتونون بنشوة اللحظة الهائمون في رغباتهم فلا يدركون ما يعقبها من الألم والأسي المحتم، واللوم كذلك يشمل هؤلاء الذين أخفقوا في واجباتهم نتيجة لضعف إرادتهم فيتساوي مع هؤلاء الذين يتجنبون وينأون عن تحمل الكدح والألم ."
-    }
+    "welcomeString": "الأسعار المنخفضة اليومية للسيارات الجديدة والمستعملة",
+    "carName": "#$@%^&%$#@!#$%",
+    "carPrice": "سعر:",
+    "carModel": "@!#$%^&",
+    "carColor": "لون السيارة:",
+    "viewDetails": "عرض التفاصيل",
+    "nav-home": "الرئيسية",
+    "nav-about": "نبذة عنا",
+    "about-title": "نبذة عنا",
+    "about-para1": "لكن لا بد أن أوضح لك أن كل هذه الأفكار المغلوطة حول استنكار  النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف حقيقة وأساس تلك السعادة البشرية، فلا أحد يرفض أو يكره أو يتجنب الشعور بالسعادة، ولكن بفضل هؤلاء الأشخاص الذين لا يدركون بأن السعادة لا بد أن نستشعرها بصورة أكثر عقلانية ومنطقية فيعرضهم هذا لمواجهة الظروف الأليمة، وأكرر بأنه لا يوجد من يرغب في الحب ونيل المنال ويتلذذ بالآلام، الألم هو الألم ولكن نتيجة لظروف ما قد تكمن السعاده فيما نتحمله من كد وأسي.",
+    "about-para2": "و سأعرض مثال حي لهذا، من منا لم يتحمل جهد بدني شاق إلا من أجل الحصول على ميزة أو فائدة؟ ولكن من لديه الحق أن ينتقد شخص ما أراد أن يشعر بالسعادة التي لا تشوبها عواقب أليمة أو آخر أراد أن يتجنب الألم الذي ربما تنجم عنه بعض المتعة ؟ ",
+    "about-para3": "علي الجانب الآخر نشجب ونستنكر هؤلاء الرجال المفتونون بنشوة اللحظة الهائمون في رغباتهم فلا يدركون ما يعقبها من الألم والأسي المحتم، واللوم كذلك يشمل هؤلاء الذين أخفقوا في واجباتهم نتيجة لضعف إرادتهم فيتساوي مع هؤلاء الذين يتجنبون وينأون عن تحمل الكدح والألم ."
   },
   "en": {
     "message": "hello i18n !!",
     "user_greeting": "Hello, {name}",
-    "title": "demo9898",
-    "nav": {
-      "home": "Home",
-      "about": "About"
-    },
-    "about": {
-      "title": "About Us",
-      "para1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nobis sapiente quos officia vitae. Minus blanditiis doloremque error at consectetur magni nam voluptatem pariatur! Itaque deleniti delectus odio accusantium quas?",
-      "para2": "Non eius beatae dolorum impedit enim repudiandae nulla ipsum animi. Ullam qui libero possimus aliquam, praesentium ipsam omnis, ab aut culpa reprehenderit odio sapiente ex molestias maiores? Temporibus, molestiae eum!",
-      "para3": "Consectetur illo nobis, nemo necessitatibus quos corporis voluptates enim totam itaque ratione et ad iste corrupti eaque ex quas commodi. Perspiciatis vel quo consectetur quas nulla explicabo harum ratione consequatur."
-    }
+    "title": "Welcome to CarSaver!",
+    "welcomeString": "Everyday Low Prices on New & Used Cars",
+    "carName": "name is.......",
+    "carPrice": "Price:",
+    "carModel": "Car model:",
+    "carColor": "Car color:",
+    "viewDetails": "View Details",
+    "nav-home": "Home",
+    "nav-about": "About",
+    "about-title": "About Us",
+    "about-para1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nobis sapiente quos officia vitae. Minus blanditiis doloremque error at consectetur magni nam voluptatem pariatur! Itaque deleniti delectus odio accusantium quas?",
+    "about-para2": "Non eius beatae dolorum impedit enim repudiandae nulla ipsum animi. Ullam qui libero possimus aliquam, praesentium ipsam omnis, ab aut culpa reprehenderit odio sapiente ex molestias maiores? Temporibus, molestiae eum!",
+    "about-para3": "Consectetur illo nobis, nemo necessitatibus quos corporis voluptates enim totam itaque ratione et ad iste corrupti eaque ex quas commodi. Perspiciatis vel quo consectetur quas nulla explicabo harum ratione consequatur."
   }
 }
