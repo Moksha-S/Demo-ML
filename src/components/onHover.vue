@@ -72,6 +72,10 @@ export default {
         await axios.get(`http://localhost:3000/ar`).then((res) => {
           this.localeMessage = res.data;
         });
+      }else if (this.$i18n.locale == "es") {
+        await axios.get(`http://localhost:3000/es`).then((res) => {
+          this.localeMessage = res.data;
+        });
       }
 
       this.dialog = false;
