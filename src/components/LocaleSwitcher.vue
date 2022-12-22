@@ -17,7 +17,6 @@
       solo
       outlined
     ></v-select> -->
-    
   </div>
 </template>
 
@@ -28,10 +27,10 @@ export default {
   data: () => ({
     locales: getSupportedLocales(),
   }),
-  // console.log("===============", this.$i18n.messages[this.$i18n.locale]);
-
+  created() {
+    // console.log("===============", this.$i18n.locale);
+  },
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
