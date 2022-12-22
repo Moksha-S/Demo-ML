@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <h1>{{ $t("title") }}</h1>
+    <h1 class="main-title">
+      <onHover fieldName="title"></onHover>
+    </h1>
     <h2>{{ $t("welcomeString") }}</h2>
     <div style="margin: 4% 10%">
       <CarCards />
@@ -12,6 +14,7 @@
 <script>
 import axios from "axios";
 import CarCards from "@/components/CarCards.vue";
+import onHover from "@/components/onHover.vue";
 // import CarData from "@/components/CarData.vue";
 
 export default {
@@ -19,13 +22,10 @@ export default {
   components: {
     // CarData,
     CarCards,
+    onHover,
   },
   data() {
     return {
-      text: "",
-      carName: "",
-      carModel: "",
-      active: false,
       localeMessage: {},
     };
   },
@@ -42,17 +42,16 @@ export default {
       });
   },
 
-  methods: {
-    
-    mouseOver: function () {
-      this.active = !this.active;
-    },
-  },
+  methods: {},
 };
 </script>
 
 <style scoped>
 .field {
   margin: 20px;
+}
+.main-title {
+  display: flex;
+  justify-content: center;
 }
 </style>

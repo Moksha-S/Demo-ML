@@ -39,16 +39,19 @@
         <router-view />
       </div>
     </v-main>
+    <FooterML />
   </v-app>
 </template>
 
 <script>
 import NavML from "./components/NavML.vue";
+import FooterML from "./components/FooterML.vue";
 
 export default {
   name: "App",
   components: {
     NavML,
+    FooterML,
   },
 };
 </script>

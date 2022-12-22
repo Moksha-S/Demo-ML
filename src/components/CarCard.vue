@@ -1,7 +1,8 @@
 <template>
   <div class="card">
     <div class="car-title">
-      <v-hover v-slot="{ hover }">
+      <onHover fieldName="carName"></onHover>
+      <!-- <v-hover v-slot="{ hover }">
         <div class="car-title">
           <h3>{{ $t("carName") }}</h3>
           <v-btn v-if="hover" icon @click="dialog = !dialog">
@@ -35,25 +36,30 @@
             </v-card>
           </v-dialog>
         </div>
-      </v-hover>
+      </v-hover> -->
       <h3>{{ car }}</h3>
     </div>
-    <img :src="img" />
+    <div>
+      <img :src="img" />
+    </div>
 
     <div class="card__footer">
-      <!-- <div class="card__meta">      </div> -->
-      <p class="price">Price: {{ price }}</p>
-      <p class="price">Car model: {{ car_model }}</p>
-      <p class="price">Car color: {{ car_color }}</p>
+      <div class="car-title">
+        <onHover fieldName="carPrice"></onHover>
+        <P class="car-card-text"> {{ price }}</P>
+      </div>
+      <div class="car-title">
+        <onHover fieldName="carModel"></onHover>
+        <P class="car-card-text"> {{ car_model }}</P>
+      </div>
+      <div class="car-title">
+        <onHover fieldName="carColor"></onHover>
+        <P class="car-card-text"> {{ car_color }}</P>
+      </div>
     </div>
     <div>
-      <v-btn
-        class="ma-2"
-        outlined
-        color="#008080"
-        @click="gotoViewDetails()"
-      >
-        View Detials
+      <v-btn class="ma-2" outlined color="#008080" @click="gotoViewDetails()">
+        {{ $t("viewDetails") }}
       </v-btn>
     </div>
   </div>
@@ -61,6 +67,7 @@
 
 <script>
 import axios from "axios";
+import onHover from "./onHover";
 
 export default {
   props: {
@@ -74,11 +81,13 @@ export default {
     availability: Boolean,
     img: String,
   },
+  components: { onHover },
+
   data() {
     return {
-      dialog: false,
-      editedData: "",
-      localeMessage: {},
+      // dialog: false,
+      // editedData: "",
+      // localeMessage: {},
     };
   },
   created() {
@@ -95,23 +104,23 @@ export default {
     gotoViewDetails() {
       window.open("https://www.cars24.com/", "_blank");
     },
-    saveEditedData(key, editedData) {
-      this.dialog = false;
-      const value = {};
-      value[key] = editedData;
-      this.localeMessage = Object.assign(this.localeMessage, value);
-      this.editedData = "";
-      axios
-        .post(`http://localhost:3000/${this.$i18n.locale}`, this.localeMessage)
-        .then((response) => {
-          this.$i18n.setLocaleMessage(this.$i18n.locale, response.data);
-          const data = JSON.stringify(response.data);
-          window.localStorage.setItem(this.$i18n.locale, data);
-        })
-        .catch((e) => {
-          this.errors.push(e);
-        });
-    },
+    // saveEditedData(key, editedData) {
+    //   this.dialog = false;
+    //   const value = {};
+    //   value[key] = editedData;
+    //   this.localeMessage = Object.assign(this.localeMessage, value);
+    //   this.editedData = "";
+    //   axios
+    //     .post(`http://localhost:3000/${this.$i18n.locale}`, this.localeMessage)
+    //     .then((response) => {
+    //       this.$i18n.setLocaleMessage(this.$i18n.locale, response.data);
+    //       const data = JSON.stringify(response.data);
+    //       window.localStorage.setItem(this.$i18n.locale, data);
+    //     })
+    //     .catch((e) => {
+    //       this.errors.push(e);
+    //     });
+    // },
   },
 };
 </script>
@@ -120,9 +129,12 @@ export default {
 .card {
   width: 30%;
   margin-bottom: 2rem;
-  border: 1px solid #f2f2f2;
+  border: 1px solid #008080;
   border-radius: 4px;
   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 h3 {
@@ -147,6 +159,7 @@ img {
 .car-title {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .card__meta {
   display: flex;
@@ -159,7 +172,7 @@ p {
   font-size: 14px;
 }
 
-.price {
+.car-card-text {
   margin-left: 0.5rem;
   font-size: 1.25rem;
   font-weight: bold;
