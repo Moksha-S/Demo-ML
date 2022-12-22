@@ -1,42 +1,24 @@
 <template>
   <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <h1>{{ $t("title") }}</h1>
-    <br />
-    <!-- <p>{{ $t('greetings', [`${temp}`]) }}</p> -->
-    <button @click="chekLang()">check Lang</button>
-
-    <div @mouseover="mouseOver" style="margin: 10px">
-      ===== {{ $t("title") }}=====
+    <h2>{{ $t("welcomeString") }}</h2>
+    <div style="margin: 4% 10%">
+      <CarCards />
     </div>
-    <div v-show="active">
-      <label for="fname">edit:</label>
-      <input v-model="text" :placeholder="`${$t('title')}`" />
-      <input type="submit" value="Submit" @click="check('title', `${text}`)" />
-    </div>
-
-    <div>
-      <div class="field">
-        <label for="fname">Car name:</label>
-        <input v-model="carName" placeholder="car name" />
-      </div>
-      <div>
-        <label for="fname">Car model:</label>
-        <input v-model="carModel" placeholder="car model" />
-      </div>
-    </div>
+    <!-- <CarData /> -->
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
 import axios from "axios";
+import CarCards from "@/components/CarCards.vue";
+// import CarData from "@/components/CarData.vue";
 
 export default {
   name: "HomeView",
   components: {
-    // HelloWorld
+    // CarData,
+    CarCards,
   },
   data() {
     return {
@@ -61,30 +43,9 @@ export default {
   },
 
   methods: {
+    
     mouseOver: function () {
       this.active = !this.active;
-    },
-
-    chekLang() {
-      console.log("===============", this.$i18n.messages[this.$i18n.locale]);
-    },
-
-    check(key, text) {
-      const value = {};
-      value[key] = text;
-      this.active = !this.active;
-      this.localeMessage = Object.assign(this.localeMessage, value);
-      this.text = "";
-      axios
-        .post(`http://localhost:3000/${this.$i18n.locale}`, this.localeMessage)
-        .then((response) => {
-          const data = JSON.stringify(response.data);
-          this.$i18n.setLocaleMessage(this.$i18n.locale, response.data);
-          window.localStorage.setItem(this.$i18n.locale, data);
-        })
-        .catch((e) => {
-          this.errors.push(e);
-        });
     },
   },
 };

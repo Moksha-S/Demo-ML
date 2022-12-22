@@ -5,6 +5,19 @@
         {{ locale.name }}
       </option>
     </select>
+
+    <!-- <v-select
+      v-model="$i18n.locale"
+      :items="locales"
+      item-text="name"
+      item-value="code"
+      label="Select language"
+      return-object
+      color="white"
+      solo
+      outlined
+    ></v-select> -->
+    
   </div>
 </template>
 
@@ -15,5 +28,10 @@ export default {
   data: () => ({
     locales: getSupportedLocales(),
   }),
+  // console.log("===============", this.$i18n.messages[this.$i18n.locale]);
+
 };
 </script>
+
+<style scoped>
+</style>
