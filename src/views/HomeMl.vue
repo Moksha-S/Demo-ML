@@ -8,7 +8,6 @@
     <div style="margin: 4% 10%">
       <CarCards />
     </div>
-    <!-- <CarData /> -->
   </div>
 </template>
 
@@ -16,12 +15,10 @@
 import axios from "axios";
 import CarCards from "@/components/CarCards.vue";
 import textHover from "@/components/textHover.vue";
-// import CarData from "@/components/CarData.vue";
 
 export default {
   name: "HomeView",
   components: {
-    // CarData,
     CarCards,
     textHover,
   },
