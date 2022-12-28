@@ -1,26 +1,26 @@
 <template>
   <div class="card">
-    <div class="car-title">
-      <textHover fieldName="carName"></textHover>
-      <h3>{{ car }}</h3>
+    <div class="car-title" style="padding:12px">
+      <textHover fieldName="carName" :textData="car"></textHover>
+      <!-- <h3>{{ car }}</h3> -->
     </div>
     <div>
       <img :src="img" />
     </div>
 
     <div class="card__footer">
-      <div class="car-title">
-        <textHover fieldName="carPrice"></textHover>
-        <P class="car-card-text"> {{ price }}</P>
-      </div>
-      <div class="car-title">
-        <textHover fieldName="carModel"></textHover>
-        <P class="car-card-text"> {{ car_model }}</P>
-      </div>
-      <div class="car-title">
-        <textHover fieldName="carColor"></textHover>
-        <P class="car-card-text"> {{ car_color }}</P>
-      </div>
+      <textHover fieldName="carPrice" :textData="price"></textHover>
+      <textHover fieldName="carModel" :textData="car_model"></textHover>
+      <textHover fieldName="carColor" :textData="car_color"></textHover>
+      <!-- <div class="car-title"> -->
+      <!-- <P class="car-card-text"> {{ price }}</P> -->
+      <!-- </div> -->
+      <!-- <div class="car-title"> -->
+      <!-- <P class="car-card-text"> {{ car_model }}</P> -->
+      <!-- </div> -->
+      <!-- <div class="car-title"> -->
+      <!-- <P class="car-card-text"> {{ car_color }}</P> -->
+      <!-- </div> -->
     </div>
     <div>
       <v-btn class="ma-2" outlined color="#008080" @click="gotoViewDetails()">

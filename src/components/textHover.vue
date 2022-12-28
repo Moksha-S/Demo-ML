@@ -1,16 +1,15 @@
 <template>
-  <div class="cards">
-    <div
-      class="car-title"
-      @mouseover="hover = true"
-      @mouseleave="hover = false"
-    >
-      <h3>
-        {{ $t(fieldName) }}
-      </h3>
-      <EditBox :hover="hover" :fieldName="fieldName"></EditBox>
-    </div>
+  <!-- <div class="cards"> -->
+  <div class="car-title" @mouseover="hover = true" @mouseleave="hover = false">
+    <h3>
+      {{ $t(fieldName) }}
+    </h3>
+    <EditBox :hover="hover" :fieldName="fieldName"></EditBox>
+    <h3 class="car-card-text">
+      {{ textData }}
+    </h3>
   </div>
+  <!-- </div> -->
 </template>
 
 <script>
@@ -19,6 +18,7 @@ import EditBox from "./EditBox.vue";
 export default {
   props: {
     fieldName: String,
+    textData: String,
   },
   data() {
     return {
@@ -52,5 +52,10 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.car-card-text {
+  margin-left: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 </style>
