@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1 class="main-title">
-      <onHover fieldName="title"></onHover>
+      <textHover fieldName="title"></textHover>
     </h1>
     <h2>{{ $t("welcomeString") }}</h2>
     <div style="margin: 4% 10%">
@@ -14,7 +14,7 @@
 <script>
 import axios from "axios";
 import CarCards from "@/components/CarCards.vue";
-import onHover from "@/components/onHover.vue";
+import textHover from "@/components/textHover.vue";
 // import CarData from "@/components/CarData.vue";
 
 export default {
@@ -22,7 +22,7 @@ export default {
   components: {
     // CarData,
     CarCards,
-    onHover,
+    textHover,
   },
   data() {
     return {};

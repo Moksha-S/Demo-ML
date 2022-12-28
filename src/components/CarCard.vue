@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="car-title">
-      <onHover fieldName="carName"></onHover>
+      <textHover fieldName="carName"></textHover>
       <h3>{{ car }}</h3>
     </div>
     <div>
@@ -10,15 +10,15 @@
 
     <div class="card__footer">
       <div class="car-title">
-        <onHover fieldName="carPrice"></onHover>
+        <textHover fieldName="carPrice"></textHover>
         <P class="car-card-text"> {{ price }}</P>
       </div>
       <div class="car-title">
-        <onHover fieldName="carModel"></onHover>
+        <textHover fieldName="carModel"></textHover>
         <P class="car-card-text"> {{ car_model }}</P>
       </div>
       <div class="car-title">
-        <onHover fieldName="carColor"></onHover>
+        <textHover fieldName="carColor"></textHover>
         <P class="car-card-text"> {{ car_color }}</P>
       </div>
     </div>
@@ -31,7 +31,8 @@
 </template>
 
 <script>
-import onHover from "./onHover";
+// import onHover from "./onHover";
+import textHover from "./textHover";
 
 export default {
   props: {
@@ -45,7 +46,10 @@ export default {
     availability: Boolean,
     img: String,
   },
-  components: { onHover },
+  components: {
+    // onHover,
+    textHover,
+  },
 
   data() {
     return {};

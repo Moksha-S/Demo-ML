@@ -1,0 +1,56 @@
+<template>
+  <div class="cards">
+    <div
+      class="car-title"
+      @mouseover="hover = true"
+      @mouseleave="hover = false"
+    >
+      <h3>
+        {{ $t(fieldName) }}
+      </h3>
+      <EditBox :hover="hover" :fieldName="fieldName"></EditBox>
+    </div>
+  </div>
+</template>
+
+<script>
+import EditBox from "./EditBox.vue";
+
+export default {
+  props: {
+    fieldName: String,
+  },
+  data() {
+    return {
+      hover: false,
+      dialog: false,
+      editedData: "",
+      localeMessage: {},
+    };
+  },
+
+  components: { EditBox },
+
+  methods: {
+    mouseover() {
+      this.hover = !this.hover;
+    },
+    mouseleave() {
+      this.hover = !this.hover;
+    },
+  },
+};
+</script>
+
+<style scoped>
+.cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.car-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
