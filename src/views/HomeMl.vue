@@ -4,7 +4,7 @@
       <textHover fieldName="title"></textHover>
     </h1>
     <h2 v-hoverCar>{{ $t("welcomeString") }}</h2>
-    <!-- <h3 v-demo> Check for hover</h3> -->
+    <!-- <h3 v-demo>Check for hover</h3> -->
     <div style="margin: 4% 10%">
       <CarCards />
     </div>
@@ -15,12 +15,14 @@
 import axios from "axios";
 import CarCards from "@/components/CarCards.vue";
 import textHover from "@/components/textHover.vue";
+// import VModal from "@/components/VModal.vue";
 
 export default {
   name: "HomeView",
   components: {
     CarCards,
     textHover,
+    // VModal,
   },
   data() {
     return {};
