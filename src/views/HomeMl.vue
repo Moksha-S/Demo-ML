@@ -5,6 +5,8 @@
     </h1>
     <h2 v-hoverCar>{{ $t("welcomeString") }}</h2>
     <!-- <h3 v-demo>Check for hover</h3> -->
+    <!-- <h2 v-hoverCar="'demo'"  @mouseover="demoShow = true" >{{ $t("welcomeString") }}</h2>
+    <v-btn v-if="demoShow" class="demo-btn">Demo</v-btn> -->
     <div style="margin: 4% 10%">
       <CarCards />
     </div>
@@ -25,7 +27,9 @@ export default {
     // VModal,
   },
   data() {
-    return {};
+    return {
+      // demoShow:false
+    };
   },
 
   created() {
@@ -50,5 +54,11 @@ export default {
 .main-title {
   display: flex;
   justify-content: center;
+}
+
+.demo-btn {
+  position: absolute;
+  top: 1%;
+  left: 64%;
 }
 </style>
