@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <div class="car-title" style="padding:12px">
+    <div class="car-title" style="padding: 12px">
       <textHover fieldName="carName" :textData="car"></textHover>
       <!-- <h3>{{ car }}</h3> -->
     </div>
@@ -12,15 +12,6 @@
       <textHover fieldName="carPrice" :textData="price"></textHover>
       <textHover fieldName="carModel" :textData="car_model"></textHover>
       <textHover fieldName="carColor" :textData="car_color"></textHover>
-      <!-- <div class="car-title"> -->
-      <!-- <P class="car-card-text"> {{ price }}</P> -->
-      <!-- </div> -->
-      <!-- <div class="car-title"> -->
-      <!-- <P class="car-card-text"> {{ car_model }}</P> -->
-      <!-- </div> -->
-      <!-- <div class="car-title"> -->
-      <!-- <P class="car-card-text"> {{ car_color }}</P> -->
-      <!-- </div> -->
     </div>
     <div>
       <v-btn class="ma-2" outlined color="#008080" @click="gotoViewDetails()">
@@ -31,7 +22,6 @@
 </template>
 
 <script>
-// import onHover from "./onHover";
 import textHover from "./textHover";
 
 export default {

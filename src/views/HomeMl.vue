@@ -4,7 +4,6 @@
       <textHover fieldName="title"></textHover>
     </h1>
     <h2 v-hoverCar>{{ $t("welcomeString") }}</h2>
-    <!-- <h3 v-demo> Check for hover</h3> -->
     <div style="margin: 4% 10%">
       <CarCards />
     </div>
