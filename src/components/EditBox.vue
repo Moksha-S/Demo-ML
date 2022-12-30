@@ -1,10 +1,10 @@
 <template>
-  <div >
+  <div>
     <v-btn v-if="hover" icon @click="dialog = !dialog">
       <v-icon>mdi-pencil</v-icon>
     </v-btn>
 
-    <v-dialog v-model="dialog" persistent max-width="390">
+    <v-dialog v-model="dialogValue" persistent max-width="390">
       <v-card>
         <v-card-title class="text-h5"> Edit {{ $t(fieldName) }} </v-card-title>
         <v-card-text>
@@ -17,7 +17,7 @@
         ></v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="red" text @click="dialog = false"> cancle </v-btn>
+          <v-btn color="red" text @click="closeModal()"> cancle </v-btn>
           <v-btn
             color="green darken-1"
             text
@@ -38,15 +38,17 @@ export default {
   props: {
     hover: Boolean,
     fieldName: String,
+    editShow: Boolean,
   },
   data() {
     return {
-      dialog: false,
+      dialogValue: false,
       editedData: "",
       localeMessage: {},
     };
   },
   created() {
+    this.dialogValue = this.editShow;
     axios
       .get(`http://localhost:3000/${this.$i18n.locale}`)
       .then((response) => {
@@ -56,7 +58,17 @@ export default {
         // this.errors.push(e);
       });
   },
+  mounted() {
+    this.dialogValue = this.editShow;
+  },
+  updated() {
+    // this.dialogValue = this.editShow;
+  },
   methods: {
+    closeModal() {
+     this.dialogValue = false;
+      this.$emit('update')
+    },
     async saveEditedData(key, editedData) {
       if (this.$i18n.locale == "en") {
         await axios.get(`http://localhost:3000/en`).then((res) => {
@@ -72,7 +84,7 @@ export default {
         });
       }
 
-      this.dialog = false;
+      this.dialogValue = false;
       const value = {};
       value[key] = editedData;
       this.localeMessage = Object.assign(this.localeMessage, value);
