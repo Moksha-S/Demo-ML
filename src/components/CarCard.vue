@@ -9,7 +9,8 @@
     </div>
 
     <div class="card__footer">
-      <textHover fieldName="carPrice" :textData="price"></textHover>
+      <textHover fieldName="carPrice" :textData="priceValue"></textHover>
+      <p>{{ price }}</p>
       <textHover fieldName="carModel" :textData="car_model"></textHover>
       <textHover fieldName="carColor" :textData="car_color"></textHover>
     </div>
@@ -21,6 +22,7 @@
   </div>
 </template>
 
+<script src="https://global.localizecdn.com/localize.js"></script>
 <script>
 import textHover from "./textHover";
 
@@ -42,14 +44,50 @@ export default {
   },
 
   data() {
-    return {};
+    return {
+      priceValue: 0,
+      currencyCode: {
+        en: "USD",
+        es: "EUR",
+        fr: "EUR",
+      },
+    };
   },
+
   created() {
+    this.currencyConvert();
     // axios.get(`http://localhost:3000/${this.$i18n.locale}`).then(() => {});
   },
+ 
   methods: {
     gotoViewDetails() {
       window.open("https://www.cars24.com/", "_blank");
+    },
+
+    async currencyConvert() {
+      let code = this.currencyCode[Localize.getLanguage()];
+      let currencyValue = parseFloat(this.price.substring(1));
+      let refThis = this;
+
+      await Localize.currency(
+        currencyValue,
+        { originalCurrency: "USD", targetCurrency: code },
+        function (err, value) {
+          refThis.priceValue = value;
+        }
+      );
+      // const price = 14340;
+
+      // let USDollar = new Intl.NumberFormat(Localize.getLanguage(), {
+      //   style: "currency",
+      //   currency: code,
+      // });
+
+      // console.log(
+      //   `The formated version of ${this.price} is ${USDollar.format(
+      //     refThis.priceValue
+      //   )}`
+      // );
     },
   },
 };

@@ -16,10 +16,7 @@
 import EditBox from "./EditBox.vue";
 
 export default {
-  props: {
-    fieldName: String,
-    textData: String,
-  },
+  props: ["fieldName", "textData"],
   data() {
     return {
       hover: false,
