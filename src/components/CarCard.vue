@@ -32,7 +32,7 @@ export default {
     car_color: String,
     car_model_year: Number,
     car_vin: String,
-    price: String,
+    price: Number,
     availability: Boolean,
     img: String,
   },
