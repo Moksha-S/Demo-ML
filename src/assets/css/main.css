@@ -1,0 +1,21 @@
+:root {
+  --red: #b00;
+  --teal: #008080;
+  --fullwidth: 100%;
+}
+
+[data-theme="dark"] {
+  --bg-color: #b00;
+}
+
+.bg-color-ml {
+  background-color: var(--teal);
+}
+
+.teal {
+  background-color: var(--teal);
+}
+
+.red {
+  background-color: var(--red);
+}
