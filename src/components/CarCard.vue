@@ -10,7 +10,6 @@
 
     <div class="card__footer">
       <textHover fieldName="carPrice" :textData="priceValue"></textHover>
-      <!-- <p>{{ price }}</p> -->
       <textHover fieldName="carModel" :textData="car_model"></textHover>
       <textHover fieldName="carColor" :textData="car_color"></textHover>
     </div>
@@ -76,18 +75,6 @@ export default {
           refThis.priceValue = value;
         }
       );
-      // const price = 14340;
-
-      // let USDollar = new Intl.NumberFormat(Localize.getLanguage(), {
-      //   style: "currency",
-      //   currency: code,
-      // });
-
-      // console.log(
-      //   `The formated version of ${this.price} is ${USDollar.format(
-      //     refThis.priceValue
-      //   )}`
-      // );
     },
   },
 };

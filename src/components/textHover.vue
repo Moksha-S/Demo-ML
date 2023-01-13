@@ -5,7 +5,7 @@
       {{ $t(fieldName) }}
     </h3>
     <EditBox :hover="hover" :fieldName="fieldName"></EditBox>
-    <h3 class="car-card-text">
+    <h3 notranslate class="car-card-text">
       {{ textData }}
     </h3>
   </div>
