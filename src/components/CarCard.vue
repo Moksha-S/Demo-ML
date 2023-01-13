@@ -10,7 +10,7 @@
 
     <div class="card__footer">
       <textHover fieldName="carPrice" :textData="priceValue"></textHover>
-      <p>{{ price }}</p>
+      <!-- <p>{{ price }}</p> -->
       <textHover fieldName="carModel" :textData="car_model"></textHover>
       <textHover fieldName="carColor" :textData="car_color"></textHover>
     </div>
